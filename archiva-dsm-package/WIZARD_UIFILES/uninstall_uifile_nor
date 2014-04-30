@@ -1,0 +1,11 @@
+[{
+	"step_title": "Avinstaller Archiva",
+	"items": [{
+		"type": "multiselect",
+		"desc": "Ønsker du å fjerne Archivas repositories mappe?",
+		"subitems": [{
+			"key": "pkgwizard_remove_repositories",
+			"desc": "Fjern Archivas delte mappe"
+		}]
+	}]
+}]

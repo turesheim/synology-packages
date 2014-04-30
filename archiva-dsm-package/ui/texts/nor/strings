@@ -1,0 +1,26 @@
+
+# Copyright (c) 2000-2008 Synology Inc. All rights reserved.
+
+[app]
+app_name	=	"Archiva"
+str_meta_desc	=	"Archiva er en programvareimplementering med åpen kilde for Java Servlet- og JavaServer Pages (JSP)-teknologi. Det er en web-server som ikke er begrenset til å servere statiske nettsider, men som også kan generere dynamiske resultater som svar på brukerens forespørsler ved å utføre Java servlet og gjengi nettsider."
+
+[common]
+description	=	"Archiva er en programvareimplementering med åpen kilde for Java Servlet- og JavaServer Pages (JSP)-teknologi. Det er en web-server som ikke er begrenset til å servere statiske nettsider, men som også kan generere dynamiske resultater som svar på brukerens forespørsler ved å utføre Java servlet og gjengi nettsider."
+
+[script]
+error_unknown	=	"Handlingen mislyktes. Logg deg på DSM igjen og prøv på nytt."
+illegal_share_name	=	"Navnet på den delte mappen inneholder ugyldige tegn."
+install_java_first	=	"Installer Java Manager og Java før du installerer Archiva."
+please_input_share_name	=	"Please input shared folder name"
+share_is_existed	=	"En delt mappe med dette navnet finnes allerede. Skriv inn et annet navn."
+share_name_cannot_be_homes	=	"Navnet på den delte mappen kan ikke være {0}."
+
+[wizard]
+install_title	=	"Installer Archiva"
+remove_caution	=	"Ønsker du å fjerne Archivas delte mappe (det vil si webapps-mappe) hvor ressursene og dataene for dine web-programmer er lagret?"
+remove_confirm	=	"Fjern Archivas delte mappe"
+remove_title	=	"Avinstaller Archiva"
+share_name_description	=	"Opprett en delt mappe for å lagre dataene for dine web-programmer. Navnet på den delte mappen vil bli Archiva hvis du lar det stå tomt."
+share_name_field_desc	=	"Navn på delte mapper"
+

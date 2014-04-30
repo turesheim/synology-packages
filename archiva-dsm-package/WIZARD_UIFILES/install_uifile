@@ -1,0 +1,11 @@
+[{
+	"step_title": "Install Archiva",
+	"items": [{
+		"type": "textfield",
+		"desc": "Create a shared folder to store repository data. The shared folder name will be 'Archiva' if left blank.",
+		"subitems": [{
+			"key": "archiva_share_name",
+			"desc": "Shared folder name"
+		}]
+	}]
+}]

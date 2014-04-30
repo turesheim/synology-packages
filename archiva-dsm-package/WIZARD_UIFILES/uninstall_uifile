@@ -1,0 +1,11 @@
+[{
+	"step_title": "Uninstall Archiva",
+	"items": [{
+		"type": "multiselect",
+		"desc": "Do you want to remove Archiva's repositories folder?",
+		"subitems": [{
+			"key": "pkgwizard_remove_repositories",
+			"desc": "Remove Archiva's shared folder"
+		}]
+	}]
+}]

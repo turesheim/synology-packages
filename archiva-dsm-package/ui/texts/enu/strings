@@ -1,0 +1,26 @@
+
+# Copyright (c) 2000-2008 Synology Inc. All rights reserved.
+
+[app]
+app_name	=	"Archiva"
+str_meta_desc	=	"Archiva is an open source software implementation of the Java Servlet and JavaServer Pages (JSP) technologies. It is a web server not limited to serving up static web pages, but can also generate dynamic results in response to user requests by executing Java servlets and rendering web pages."
+
+[common]
+description	=	"Archiva is an open source software implementation of the Java Servlet and JavaServer Pages (JSP) technologies. It is a web server not limited to serving up static web pages, but can also generate dynamic results in response to user requests by executing Java servlets and rendering web pages."
+
+[script]
+error_unknown	=	"The operation failed. Please log in to DSM again and retry."
+illegal_share_name	=	"The shared folder name contains illegal characters."
+install_java_first	=	"Please install Java Manager and Java before installing Archiva."
+please_input_share_name	=	"Please input shared folder name"
+share_is_existed	=	"A shared folder with the same name already exists. Please enter a different name."
+share_name_cannot_be_homes	=	"The shared folder name cannot be {0}."
+
+[wizard]
+install_title	=	"Install Archiva"
+remove_caution	=	"Do you want to remove Archiva's shared folder (namely webapps folder) in which the resources and data of your web applications are stored?"
+remove_confirm	=	"Remove Archiva's shared folder"
+remove_title	=	"Uninstall Archiva"
+share_name_description	=	"Create a shared folder to store the data of your web applications. The shared folder name will be Archiva if left blank."
+share_name_field_desc	=	"Shared folder name"
+

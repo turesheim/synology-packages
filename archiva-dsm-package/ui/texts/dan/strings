@@ -1,0 +1,26 @@
+
+# Copyright (c) 2000-2008 Synology Inc. All rights reserved.
+
+[app]
+app_name	=	"Tomcat"
+str_meta_desc	=	"Tomcat er en Open Source-softwareimplementering af teknologierne Java Servlet og JavaServer Pages (JSP). Det er en webserver, der ikke er begrænset til at vise statiske websider, men kan også generere dynamiske resultater som reaktion på brugerforespørgsler ved at udføre Java servlets og gengive websider."
+
+[common]
+description	=	"Tomcat er en Open Source-softwareimplementering af teknologierne Java Servlet og JavaServer Pages (JSP). Det er en webserver, der ikke er begrænset til at vise statiske websider, men kan også generere dynamiske resultater som reaktion på brugerforespørgsler ved at udføre Java servlets og gengive websider."
+
+[script]
+error_unknown	=	"Operationen mislykkedes. Log ind på DSM igen, og prøv igen."
+illegal_share_name	=	"Navnet på den delte mappe indeholder ulovlige tegn."
+install_java_first	=	"Installer Java Manager og Java, før du installerer Tomcat."
+please_input_share_name	=	"Please input shared folder name"
+share_is_existed	=	"Der findes allerede en delt mappe med samme navn. Indtast et andet navn."
+share_name_cannot_be_homes	=	"Navnet på den delte mappe kan ikke være {0}."
+
+[wizard]
+install_title	=	"Installer Tomcat"
+remove_caution	=	"Vil du fjerne Tomcats delte mappe (dvs. mappen webapps), hvor ressourcerne og dataene for dine webprogrammer er lagret?"
+remove_confirm	=	"Fjern Tomcats delte mappe"
+remove_title	=	"Fjern Tomcat"
+share_name_description	=	"Opret en delt mappe for at lagre data for dine webprogrammer. Navnet på den delte mappe bliver Tomcat, hvis det ikke udfyldes."
+share_name_field_desc	=	"Navn på delt mappe"
+

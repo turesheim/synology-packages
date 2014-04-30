@@ -1,0 +1,5 @@
+error_unknown="Åtgärden misslyckades. Logga in på DSM och försök igen."
+share_is_existed="Det finns redan en delad mapp med samma namn. Ange ett annat namn."
+share_name_cannot_be_homes="Namnet på den delade mappen kan inte vara {0}."
+illegal_share_name="Namnet på den delade mappen innehåller otillåtna tecken."
+install_java_first="Installera Java Manager och Java före installation av Archiva."

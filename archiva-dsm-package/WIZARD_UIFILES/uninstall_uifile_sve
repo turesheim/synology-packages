@@ -1,0 +1,11 @@
+[{
+	"step_title": "Avinstallera Archiva",
+	"items": [{
+		"type": "multiselect",
+		"desc": "Vill du radera Archiva:s repositories mappe?",
+		"subitems": [{
+			"key": "pkgwizard_remove_repositories",
+			"desc": "Radera Archiva:s delade mapp"
+		}]
+	}]
+}]

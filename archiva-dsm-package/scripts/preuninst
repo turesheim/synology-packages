@@ -1,0 +1,21 @@
+#!/bin/sh
+# Copyright (C) 2014 Torkild U. Resheim.
+
+. `dirname $0`/string_loader
+. `dirname $0`/common
+
+if [ "x${pkgwizard_remove_repositories}" = "xtrue" ]; then
+	name=`echo ${ARCHIVA_DATA} | cut -d/ -f3`
+	synoshare --del TRUE ${name}
+else
+	BACKUP_DIRNAME=`get_key_value $COMMON_FILE ARCHIVA_DIR_NAME`
+	BACKUP_PATH=$ARCHIVA_DATA/$SYNO_BACKUP
+
+	echo "share_name=\"${ARCHIVA_DATA}\"" >> $BACKUP_CONF
+	echo "backup_dirname=\"${BACKUP_DIRNAME}\"" >> $BACKUP_CONF
+	echo "backup_path=\"${BACKUP_PATH}\"" >> $BACKUP_CONF
+
+	BackupSrc
+fi
+
+exit 0

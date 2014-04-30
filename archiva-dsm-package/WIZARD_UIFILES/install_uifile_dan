@@ -1,0 +1,11 @@
+[{
+	"step_title": "Installer Archiva",
+	"items": [{
+		"type": "textfield",
+		"desc": "Opret en delt mappe for at lagre data for repositories. Navnet på den delte mappe bliver 'Archiva', hvis det ikke udfyldes.",
+		"subitems": [{
+			"key": "archiva_share_name",
+			"desc": "Navn på delt mappe"
+		}]
+	}]
+}]

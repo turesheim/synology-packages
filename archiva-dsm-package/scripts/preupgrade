@@ -1,0 +1,4 @@
+#!/bin/sh
+# Copyright (C) 2014 Torkild U. Resheim.
+
+exit 0

@@ -1,0 +1,26 @@
+
+# Copyright (c) 2000-2008 Synology Inc. All rights reserved.
+
+[app]
+app_name	=	"Tomcat"
+str_meta_desc	=	"Tomcat är en mjukvaruimplementering med öppen källkod av Java Servlet och JavaServer Pages (JSP) teknologier. Det är en webbserver som inte är begränsad till att presentera statiska webbsidor, utan kan också generera dynamiska resultat som svar på användarförfrågningar genom att exekveraJava Servlets och rendera webbsidor."
+
+[common]
+description	=	"Tomcat är en mjukvaruimplementering med öppen källkod av Java Servlet och JavaServer Pages (JSP) teknologier. Det är en webbserver som inte är begränsad till att presentera statiska webbsidor, utan kan också generera dynamiska resultat som svar på användarförfrågningar genom att exekveraJava Servlets och rendera webbsidor."
+
+[script]
+error_unknown	=	"Åtgärden misslyckades. Logga in på DSM och försök igen."
+illegal_share_name	=	"Namnet på den delade mappen innehåller otillåtna tecken."
+install_java_first	=	"Installera Java Manager och Java före installation av Tomcat."
+please_input_share_name	=	"Please input shared folder name"
+share_is_existed	=	"Det finns redan en delad mapp med samma namn. Ange ett annat namn."
+share_name_cannot_be_homes	=	"Namnet på den delade mappen kan inte vara {0}."
+
+[wizard]
+install_title	=	"Installera Tomcat"
+remove_caution	=	"Vill du radera Tomcat:s delade mapp (närmare bestämt webapps-mappen) i vilken resurser och data för dina webbprogram lagras?"
+remove_confirm	=	"Radera Tomcat:s delade mapp"
+remove_title	=	"Avinstallera Tomcat"
+share_name_description	=	"Skapa en delad mapp för att lagra data för dina webbprogram. Om du lämnar namnet blankt blir namnet på mappen Tomcat."
+share_name_field_desc	=	"Namn på delad mapp"
+

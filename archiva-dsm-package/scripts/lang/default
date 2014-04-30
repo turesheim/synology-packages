@@ -1,0 +1,5 @@
+error_unknown="The operation failed. Please log in to DSM again and retry."
+share_is_existed="A shared folder with the same name already exists. Please enter a different name."
+share_name_cannot_be_homes="The shared folder name cannot be {0}."
+illegal_share_name="The shared folder name contains illegal characters."
+install_java_first="Please install Java Manager and Java before installing Archiva."

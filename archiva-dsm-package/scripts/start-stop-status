@@ -1,0 +1,40 @@
+#!/bin/sh
+# Copyright (C) 2014 Torkild U. Resheim.
+
+. `dirname $0`/common
+ARCHIVA_START_SCRIPT="${ARCHIVA_ROOT}/bin/archiva start"
+ARCHIVA_STOP_SCRIPT="${ARCHIVA_ROOT}/bin/archiva stop"
+
+IsBroken()
+{
+	if [ "$SYNOPKG_DSM_VERSION_BUILD" -lt 2610 ]; then
+		exit 2
+	else
+		exit 150
+	fi
+}
+
+case $1 in
+	start)
+		. /etc/profile
+		[ -z "${JAVA_HOME}" ] && IsBroken
+		su - ${DAEMON_USER} -s /bin/sh ${ARCHIVA_START_SCRIPT} start || IsBroken
+		exit 0
+		;;
+	stop)
+		. /etc/profile
+		[ -z "${JAVA_HOME}" ] && IsBroken
+		su - ${DAEMON_USER} -s /bin/sh $ARCHIVA_STOP_SCRIPT stop || IsBroken
+		exit 0
+		;;
+	status)
+		exit 0
+		;;
+	log)
+		exit 0
+		;;
+	*)
+		exit 1
+		;;
+esac
+

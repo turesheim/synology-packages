@@ -1,0 +1,15 @@
+{
+	".url": {
+		"SYNO.SDS.Archiva": {
+			"type": "url",
+			"allUsers": true,
+			"title": "Archiva",
+			"desc": "Archiva",
+			"texts": "texts",
+			"icon": "Archiva_{0}.png",
+			"protocol": "http",
+			"url": "/",
+			"port": "8080"
+		}
+	}
+}

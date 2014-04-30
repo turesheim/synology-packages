@@ -1,0 +1,11 @@
+[{
+	"step_title": "Installera Archiva",
+	"items": [{
+		"type": "textfield",
+		"desc": "Skapa en delad mapp för att lagra data för repositories. Om du lämnar namnet blankt blir namnet på mappen 'Archiva'.",
+		"subitems": [{
+			"key": "archiva_share_name",
+			"desc": "Namn på delad mapp"
+		}]
+	}]
+}]

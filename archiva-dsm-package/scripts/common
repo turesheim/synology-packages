@@ -1,0 +1,28 @@
+#!/bin/sh
+# Copyright (C) 2014 Torkild U. Resheim.
+
+PKG_TARGET="/var/packages/Archiva/target"
+DAEMON_USER="http"
+ARCHIVA_DIR_NAME="src"
+ARCHIVA_ROOT="${PKG_TARGET}/${ARCHIVA_DIR_NAME}"
+BACKUP_CONF="/var/packages/.archiva.conf"
+SYNO_BACKUP=".synology/backup"
+COMMON_FILE="/var/packages/Archiva/scripts/common"
+ARCHIVA_DATA="__VOL_PATH__/__SHARE_NAME__"
+FILE_LIST=$PKG_TARGET/synology_added/archiva_files.all
+
+BackupSrc()
+{
+	BACKUP_PATH=`get_key_value $BACKUP_CONF backup_path`
+	BACKUP_DIRNAME=`get_key_value $BACKUP_CONF backup_dirname`
+	BACKUP_ROOT=${PKG_TARGET}/${BACKUP_DIRNAME}
+
+	[ -d "$BACKUP_PATH" ] || mkdir -p $BACKUP_PATH
+	rm -rf $BACKUP_PATH/$BACKUP_DIRNAME
+	/bin/cp -rf $BACKUP_ROOT $BACKUP_PATH/$BACKUP_DIRNAME
+
+	while read FILE; do
+		[ -f $BACKUP_PATH/$FILE ] && rm -f $BACKUP_PATH/$FILE
+	done < $FILE_LIST
+}
+

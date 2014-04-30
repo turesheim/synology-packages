@@ -1,0 +1,5 @@
+error_unknown="Handlingen mislyktes. Logg deg på DSM igjen og prøv på nytt."
+share_is_existed="En delt mappe med dette navnet finnes allerede. Skriv inn et annet navn."
+share_name_cannot_be_homes="Navnet på den delte mappen kan ikke være {0}."
+illegal_share_name="Navnet på den delte mappen inneholder ugyldige tegn."
+install_java_first="Installer Java Manager og Java før du installerer Archiva."

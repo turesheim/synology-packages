@@ -1,0 +1,11 @@
+[{
+	"step_title": "Fjern Archiva",
+	"items": [{
+		"type": "multiselect",
+		"desc": "Vil du fjerne Archivas repositories mappe?",
+		"subitems": [{
+			"key": "pkgwizard_remove_repositories",
+			"desc": "Fjern Archivas delte mappe"
+		}]
+	}]
+}]

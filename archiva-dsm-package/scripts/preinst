@@ -1,0 +1,58 @@
+#!/bin/sh
+# Copyright (C) 2014 Torkild U. Resheim.
+
+. /etc/profile
+. `dirname $0`/common
+. `dirname $0`/string_loader
+
+if [ -z "${JAVA_HOME}" ]; then
+	echo $install_java_first >> $SYNOPKG_TEMP_LOGFILE
+	exit 1;
+fi
+
+
+# Use the default share name if unspecified
+if [ -z ${archiva_share_name} ]; then
+	archiva_share_name="Archiva"
+fi
+
+# Check if we have a legal share name
+RESERVED_SHARE_NAMES="homes web video music audio photo netbackup surveillance"
+for name in $RESERVED_SHARE_NAMES
+do
+	if [ `echo ${archiva_share_name} | awk '{ print toupper($0) }'` = `echo ${name} | awk '{ print toupper($0) }'` ]; then
+		echo ${share_name_cannot_be_homes} | sed "s/{0}/${archiva_share_name}/" >> $SYNOPKG_TEMP_LOGFILE
+		exit 1
+	fi
+done
+synoshare --get ${archiva_share_name}
+if [ $? == 0 ]; then
+	echo ${share_is_existed} >> $SYNOPKG_TEMP_LOGFILE
+	exit 1
+fi
+
+VOL_PATH=$SYNOPKG_PKGDEST_VOL
+ARCHIVA_DATA=${VOL_PATH}/${archiva_share_name}
+
+# Create the shared folder with Archiva data 
+synoshare --add ${archiva_share_name} "Archiva shared folder" ${ARCHIVA_DATA} "" "admin,http" "" 1 ""
+if [ $? != 0 ]; then
+	echo "${illegal_share_name}" >> $SYNOPKG_TEMP_LOGFILE
+	exit 1
+fi
+/usr/syno/bin/synoacltool -add ${ARCHIVA_DATA}  user:${DAEMON_USER}:allow:rwxpdDaARWc:fd
+
+# Prepare the data directories
+mkdir ${ARCHIVA_DATA}/repositories
+mkdir ${ARCHIVA_DATA}/data
+mkdir ${ARCHIVA_DATA}/logs
+mkdir ${ARCHIVA_DATA}/temp
+
+# Make sure we have the correct access rights
+chown -R root:root ${SYNOPKG_PKGDEST}
+chown -R root:root ${SYNOPKG_PKGINST_TEMP_DIR}
+	
+/bin/sed -i "s,__VOL_PATH__,${VOL_PATH}," `dirname $0`/common
+/bin/sed -i "s,__SHARE_NAME__,${archiva_share_name}," `dirname $0`/common
+
+exit 0

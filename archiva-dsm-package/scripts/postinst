@@ -1,0 +1,24 @@
+#!/bin/sh
+# Copyright (C) 2014 Torkild U. Resheim.
+
+. `dirname $0`/common
+. `dirname $0`/string_loader
+
+# Create links to working directories
+mv ${ARCHIVA_ROOT}/conf ${ARCHIVA_DATA}/conf
+chown -R $DAEMON_USER:root ${ARCHIVA_DATA}/conf
+ln -s ${ARCHIVA_DATA}/repositories ${ARCHIVA_ROOT}/repositories
+ln -s ${ARCHIVA_DATA}/data ${ARCHIVA_ROOT}/data
+ln -s ${ARCHIVA_DATA}/logs ${ARCHIVA_ROOT}/logs
+ln -s ${ARCHIVA_DATA}/temp ${ARCHIVA_ROOT}/temp
+ln -s ${ARCHIVA_DATA}/conf ${ARCHIVA_ROOT}/conf
+
+# Specify path to Java for the wrapper to use
+source /etc/profile
+/bin/sed -i "s,__JAVA_COMMAND__,$(which java)," ${ARCHIVA_ROOT}/conf/wrapper.conf
+
+/usr/syno/bin/servicetool --install-configure-file --package $SYNOPKG_PKGDEST/ui/etc/Archiva.sc
+[ $? -ne 0 ] && echo "Failed to install port of Archiva from firewall" > $SYNOPKG_TEMP_LOGFILE
+
+
+exit 0
